@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="https://static.runoob.com/assets/react/react-0.14.7/build/react.min.js"></script>
+		<script src="https://static.runoob.com/assets/react/react-0.14.7/build/react-dom.min.js"></script>
+		<script src="https://static.runoob.com/assets/react/browser.min.js"></script>
+		<style>
+			body{
+				background:#eee;
+			}
+			header{
+				width:90%;
+				height:60px;
+				line-height:60px;
+				text-align:center;
+				font-size:32px;
+				margin:0 auto;
+				border-bottom:1px solid #ccc;
+			}
+			.container{
+				width:90%;
+				margin:0 auto;
+			}
+			.title{
+				color:red;
+			}
+			li{
+				line-height:24px;
+				font-size:18px;
+				list-style:none;
+				margin-left:10px;
+				margin-top:8px;
+			}
+			li span.num{
+				font-weight:bold;
+			}
+			.li3{
+				padding-bottom:15px;
+				margin-bottom:15px;
+				border-bottom: 1px solid #ccc;
+			}
+			p{
+				margin:0;
+				padding:0;
+				margin-bottom:8px;
+			}
+			.likP{
+				text-indent:2em;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header>个人简历</header>
+		<div class="container">
+			<div id="resume"></div>
+		</div>
+	</body>
+	<script type="text/babel">
+		var Resume = React.createClass({
+			getInitialState: function(){
+				return {
+					name: "李凯",
+					sex: "男",
+					age:"24",
+					edu: "本科",
+					workTime: "三年",
+					hopePost: "WEB前端开发",
+					hopeCity: "北京",
+					tel:"15652831973",
+					email: "961471331@qq.com",
+					qq: "961471331",
+					wechat: "k961471331",
+					github:"https://lik0214.github.io",
+					wechatgzh:"Lik逆风飞翔",
+					worked:[
+						{
+							workedTime:'2014-2017',
+							company:'山西环球巨人科技有限公司',
+							post:'WEB 前端工程师',
+							duty:'前期所做的项目主要负责静态页面的建设、动画的设计与实现、Ajax实现前后台数据交互。后期担任项目经理期间主要负责的是网站需求分析、流程设计、研讨技术、实现方案、页面效果的编写、数据交互和页面的链接，根据项目小组的情况合理分配成员的工作。运用了 Html、Css3、jQuery、Ajax 等进行异步数据调取。'
+						}
+					],
+					projects:[
+						{
+							proName:'东易日盛装饰集团官网（PC端）',
+							proTime:'2014.05-2014.12',
+							proDes:'此项目为大型装饰公司的官网建设，通过观赏性的页面和动画设计吸引更多客户，更完美的展现公司的特色。',
+							proDuty:'我在此项目中负责了‘配套产品’目录和‘家装案例’目录下的‘设计理念’页面的建设、动画效果的实现，并参与到其他页面动画的设计中。项目的组件、拼接、一些技术的指导和功能逻辑的实现。整个项目用了 Ajax 进行前后台数据的交互，实现了登陆、注册、咨询客服、联系设计师、列表、详情、修改用户名和密码等一些小功能。'
+						},
+						{
+							proName:'surveyTime 调查问卷系统 （手机端）',
+							proTime:'2015.06-2016.01',
+							proDes:'该项目为调查问卷系统的手机web项目，该系统主要为客户提供以下服务：客户可以在这里注册、登录，创建自己的调查问卷，问卷题型包括单选、多选、填空、简答四种可供选择，调查问卷成功创建后可以将调查问卷分享给他人，并可以查看每份调查问卷的统计数据，统计数据以图表的形式呈现，直观、清晰。',
+							proDuty:'在此项目中我主要担任项目经理一职，负责分配成员的工作、一些功能的预研、项目规划、项目拼接和成员的工作协商与指导，对项目整体有详细的了解。'
+						},
+						{
+							proName:'CRM客户管理系统（PC端）',
+							proTime:'2016.05-2016.12',
+							proDes:'此项目主要为销售类的相关行业人员提供客户收集、记录、拜访、后期跟踪服务等一些相关服务。',
+							proDuty:'在此项目中我主要担任项目经理一职，负责分配成员的工作、前后台业务逻辑的指导、用户注册登陆管理，对项目整体有详细的了解。'
+						}
+					],
+					skills:[
+						'熟练运用HTML/XHTML、CSS等网页制作技术，熟悉页面架构和布局，熟练运用JavaScript及JQuery框架实现页面动态效果。',
+						'熟练运用Ajax技术实现前后台数据交互。',
+						'深入理解H5标签语义化及搜索引擎优化。',
+						'熟练使用前端框架如 jquery、angular、vue、bootstarp等；',
+						'熟悉浏览器兼容性问题。',
+						'熟练运用BootStrap框架开发web应用,做过增删改查框架的web站。',
+						'对AngularJS有深入了解，运用AngularJs开发过手机端Web应用。',
+						'熟悉 react 组件化开发框架使用；',
+						'熟悉使用 Git/Svn 等版本管理工具进行团队合作开发；',
+						'熟练运用分布式版本管理工具git。',
+						'对前端自动化工具grunt有深入了解。',
+						'深入了解LESS优点及用法。',
+						'对Vue.js，ReactJs有一定了解。'
+					]
+				}
+			},
+			render: function(){
+				return (
+					<div>
+						<ResumeInfo inftype="个人信息" name={this.state.name} sex={this.state.sex} age={this.state.age} edu={this.state.edu} workTime={this.state.workTime} hopePost={this.state.hopePost} hopeCity={this.state.hopeCity} />
+						<ResumeContact inftype="联系方式" tel={this.state.tel} email={this.state.email} qq={this.state.qq} wechat={this.state.wechat} github={this.state.github} wechatgzh={this.state.wechatgzh} />
+						<ResumeWorked inftype="工作经历" worked={this.state.worked}/>
+						<ResumeProject inftype="项目经验" projects={this.state.projects} />
+						<ResumeSkill inftype="专业技能" skills={this.state.skills} />
+					</div>
+				)
+			}
+		});
+		var ResumeInfo = React.createClass({
+			render: function(){
+				return (
+					<div>
+						<h2 className="title">{this.props.inftype}</h2>
+						<ul>
+							<li><span className="num">1、</span>姓名：{this.props.name}</li>
+							<li><span className="num">2、</span>性别：{this.props.sex}</li>
+							<li><span className="num">3、</span>年龄：{this.props.age}</li>
+							<li><span className="num">4、</span>学历：{this.props.edu}</li>
+							<li><span className="num">5、</span>工作经验：{this.props.workTime}</li>
+							<li><span className="num">6、</span>期望职位：{this.props.hopePost}</li>
+							<li><span className="num">7、</span>期望城市：{this.props.hopeCity}</li>
+						</ul>
+					</div>
+				)
+			}
+		});
+		var ResumeContact = React.createClass({
+			render: function(){
+				return (
+					<div>
+						<h2 className="title">{this.props.inftype}</h2>
+						<ul>
+							<li><span className="num">1、</span>电话：{this.props.tel}</li>
+							<li><span className="num">2、</span>QQ：{this.props.qq}</li>
+							<li><span className="num">3、</span>微信：{this.props.wechat}</li>
+							<li><span className="num">4、</span>邮箱：{this.props.email}</li>
+							<li><span className="num">5、</span>Github：{this.props.github}</li>
+							<li><span className="num">6、</span>微信公众号：{this.props.wechatgzh}</li>
+						</ul>
+					</div>
+				)
+			}
+		});
+		var ResumeWorked = React.createClass({
+			render: function(){
+				var arr = []
+    			for(var i=0;i<this.props.worked.length;i++){
+    				arr.push(<ArrWorded workedIndex={i+1} workedTime={this.props.worked[i].workedTime} company={this.props.worked[i].company} post={this.props.worked[i].post} duty={this.props.worked[i].duty} />)
+    			}
+				return (
+					<div>
+						<h2 className="title">{this.props.inftype}</h2>
+						<ul>
+							{arr}
+						</ul>
+					</div>
+				)
+			}
+		});
+		var ArrWorded = React.createClass({
+			render: function(){
+				return (
+					<li className="li2 li3">
+						<span className="num">{this.props.workedIndex}、</span><br />
+						<ul>
+							<li>工作时间：<p className="likP">{this.props.workedTime}</p></li>
+							<li>公司名称：<p className="likP">{this.props.company}</p></li>
+							<li>公司职位：<p className="likP">{this.props.post}</p></li>
+							<li>技术负责：<p className="likP">{this.props.duty}</p></li>
+						</ul>
+					</li>
+				)
+			}
+		});
+		var ResumeProject = React.createClass({
+			render: function(){
+				var arr = []
+    			for(var i=0;i<this.props.projects.length;i++){
+    				arr.push(<ArrProject projectsIndex={i+1} proName={this.props.projects[i].proName} proTime={this.props.projects[i].proTime} proDes={this.props.projects[i].proDes} proDuty={this.props.projects[i].proDuty} />)
+    			}
+				return (
+					<div>
+						<h2 className="title">{this.props.inftype}</h2>
+						<ul>
+							{arr}
+						</ul>
+					</div>
+				)
+			}
+		});
+		var ArrProject = React.createClass({
+			render: function(){
+				return (
+					<li className="li2 li3">
+						<span className="num">{this.props.projectsIndex}、</span><br />
+						<ul>
+							<li>项目名称：<p className="likP">{this.props.proName}</p></li>
+							<li>项目时间：<p className="likP">{this.props.proTime}</p></li>
+							<li>项目描述：<p className="likP">{this.props.proDes}</p></li>
+							<li>项目负责：<p className="likP">{this.props.proDuty}</p></li>
+						</ul>
+					</li>
+				)
+			}
+		});
+		var ResumeSkill = React.createClass({
+			render: function(){
+				var arr = []
+				for(var i=0;i<this.props.skills.length;i++){
+					arr.push(<ArrSkill skillsIndex={i+1} skill={this.props.skills[i]} />)
+				}
+				return (
+					<div>
+						<h2 className="title">{this.props.inftype}</h2>
+						<ul>
+							{arr}
+						</ul>
+					</div>
+				)
+			}
+		});
+		var ArrSkill = React.createClass({
+			render: function(){
+				return (
+					<li><span className="num">{this.props.skillsIndex}、</span>{this.props.skill}</li>
+				)
+			}
+		});
+		
+		ReactDOM.render(
+			<Resume />,
+			document.getElementById('resume')
+		)
+	</script>
+
+</html>
