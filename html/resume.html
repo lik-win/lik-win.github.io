@@ -7,9 +7,21 @@
 		<script src="https://static.runoob.com/assets/react/react-0.14.7/build/react.min.js"></script>
 		<script src="https://static.runoob.com/assets/react/react-0.14.7/build/react-dom.min.js"></script>
 		<script src="https://static.runoob.com/assets/react/browser.min.js"></script>
+		
 		<style>
 			body{
 				background:#eee;
+			}
+			#likCon{
+				display:none;
+			}
+			#likStatus{
+				width:100%;
+				height:100vh;
+				color:#609FEF;
+				font-size:40px;
+				text-align:center;
+				line-height:100vh;
 			}
 			header{
 				width:90%;
@@ -17,7 +29,7 @@
 				line-height:60px;
 				text-align:center;
 				font-size:32px;
-				margin:0 auto;
+				margin:30px auto;
 				border-bottom:1px solid #ccc;
 			}
 			.container{
@@ -34,9 +46,17 @@
 				margin-left:10px;
 				margin-top:8px;
 			}
+			.liDot{
+				list-style:disc;
+				margin-left:70px;
+			}
 			li span.num{
 				font-weight:bold;
 			}
+			/*li span.tit{
+				display:inline-block;
+				width:120px;
+			}*/
 			.li3{
 				padding-bottom:15px;
 				margin-bottom:15px;
@@ -50,15 +70,35 @@
 			.likP{
 				text-indent:2em;
 			}
+			footer{
+				text-align:center;
+				font-size:24px;
+				color:#f00;
+				margin:40px 0;
+			}
 		</style>
 	</head>
 
 	<body>
-		<header>个人简历</header>
-		<div class="container">
-			<div id="resume"></div>
+		<div id="likStatus">精彩内容正在拼命加载中...请耐心等待！谢谢！</div>
+		
+		<div id="likCon">
+			<header>个人简历</header>
+			<div class="container">
+				<div id="resume"></div>
+			</div>
+			<footer>----- 感谢您花费时间阅读我的简历 ^_^! -----</footer>
 		</div>
 	</body>
+	
+	<script>
+		window.onload = function(){
+			if(document.readyState == 'complete'){
+				document.getElementById('likStatus').style.display = 'none'
+				document.getElementById('likCon').style.display = 'block'
+			}
+		}
+	</script>
 	<script type="text/babel">
 		var Resume = React.createClass({
 			getInitialState: function(){
@@ -66,22 +106,41 @@
 					name: "李凯",
 					sex: "男",
 					age:"24",
+					sch: "山西农业大学",
 					edu: "本科",
 					workTime: "三年",
 					hopePost: "WEB前端开发",
 					hopeCity: "北京",
-					tel:"15652831973",
+					tel:"15652831973 / 13383461973",
 					email: "961471331@qq.com",
 					qq: "961471331",
 					wechat: "k961471331",
 					github:"https://lik0214.github.io",
 					wechatgzh:"Lik逆风飞翔",
+					school:[
+						{
+							clubTime:'2011.10-2015.06',
+							club:'山西农业大学艺术团',
+							post:'管乐队队长（2012.10-2013.10）',
+							duty:'组织队员定期训练，传达领导老师的各项要求，组织并带领队员参与校级运动会开幕式和全校及各分院的迎新晚会。'
+						},
+						{
+							clubTime:'2012.10-2013.10',
+							club:'山西农业大学园艺学院体育部',
+							post:'体育部副部长',
+							duty:'负责组织园艺学院的田径赛、篮球赛、排球赛、乒乓球赛等多项体育赛事。'
+						}
+					],
+					honors:[
+						'2012.10 -- 荣获院校级三等奖学金',
+						'2013.10 -- 被艺术团评选为管乐队优秀队长'
+					],
 					worked:[
 						{
 							workedTime:'2014-2017',
 							company:'山西环球巨人科技有限公司',
 							post:'WEB 前端工程师',
-							duty:'前期所做的项目主要负责静态页面的建设、动画的设计与实现、Ajax实现前后台数据交互。后期担任项目经理期间主要负责的是网站需求分析、流程设计、研讨技术、实现方案、页面效果的编写、数据交互和页面的链接，根据项目小组的情况合理分配成员的工作。运用了 Html、Css3、jQuery、Ajax 等进行异步数据调取。'
+							duty:'前期所做的项目主要负责静态页面的建设、动画的设计与实现、Ajax实现前后台数据交互。后期担任项目组组长期间主要负责的是网站需求分析、流程设计、研讨技术、实现方案、页面效果的编写、数据交互和页面的链接，根据项目小组的情况合理分配成员的工作。'
 						}
 					],
 					projects:[
@@ -89,20 +148,25 @@
 							proName:'东易日盛装饰集团官网（PC端）',
 							proTime:'2014.05-2014.12',
 							proDes:'此项目为大型装饰公司的官网建设，通过观赏性的页面和动画设计吸引更多客户，更完美的展现公司的特色。',
-							proDuty:'我在此项目中负责了‘配套产品’目录和‘家装案例’目录下的‘设计理念’页面的建设、动画效果的实现，并参与到其他页面动画的设计中。项目的组件、拼接、一些技术的指导和功能逻辑的实现。整个项目用了 Ajax 进行前后台数据的交互，实现了登陆、注册、咨询客服、联系设计师、列表、详情、修改用户名和密码等一些小功能。'
+							proDuty:'我在此项目中负责了‘配套产品’目录和‘家装案例’目录下的‘设计理念’页面的建设、动画效果的实现，并参与到其他页面动画的设计中。也参与到了项目的组件、拼接、一些技术的指导和功能逻辑的实现。整个项目用了 Ajax 进行前后台数据的交互，实现了登陆、注册、咨询客服、联系设计师、列表、详情、修改用户名和密码等功能。'
 						},
 						{
 							proName:'surveyTime 调查问卷系统 （手机端）',
 							proTime:'2015.06-2016.01',
 							proDes:'该项目为调查问卷系统的手机web项目，该系统主要为客户提供以下服务：客户可以在这里注册、登录，创建自己的调查问卷，问卷题型包括单选、多选、填空、简答四种可供选择，调查问卷成功创建后可以将调查问卷分享给他人，并可以查看每份调查问卷的统计数据，统计数据以图表的形式呈现，直观、清晰。',
-							proDuty:'在此项目中我主要担任项目经理一职，负责分配成员的工作、一些功能的预研、项目规划、项目拼接和成员的工作协商与指导，对项目整体有详细的了解。'
+							proDuty:'在此项目中我主要担任项目组长一职，负责分配成员的工作、一些功能的预研、项目规划、项目拼接和成员的工作协商与指导，对项目整体有详细的了解。'
 						},
 						{
-							proName:'CRM客户管理系统（PC端）',
+							proName:'CRM客户关系管理系统（PC端）',
 							proTime:'2016.05-2016.12',
 							proDes:'此项目主要为销售类的相关行业人员提供客户收集、记录、拜访、后期跟踪服务等一些相关服务。',
-							proDuty:'在此项目中我主要担任项目经理一职，负责分配成员的工作、前后台业务逻辑的指导、用户注册登陆管理，对项目整体有详细的了解。'
+							proDuty:'在此项目中我主要担任项目组长一职，负责分配成员的工作、前后台业务逻辑的指导、用户注册登陆管理，对项目整体有详细的了解。'
 						}
+					],
+					certificate:[
+						'计算机语言：HTML、CSS、JS',
+						'网页编辑器：HBuilder、Sublime',
+						'大学英语四级证书，读写能力良好'
 					],
 					skills:[
 						'熟练运用HTML/XHTML、CSS等网页制作技术，熟悉页面架构和布局，熟练运用JavaScript及JQuery框架实现页面动态效果。',
@@ -117,18 +181,26 @@
 						'熟练运用分布式版本管理工具git。',
 						'对前端自动化工具grunt有深入了解。',
 						'深入了解LESS优点及用法。',
-						'对Vue.js，ReactJs有一定了解。'
+						'对Vue.js，ReactJs有一定了解。(该简历就是用ReactJs框架写的呦)'
+					],
+					hobby:[
+						'喜欢看一些开发论坛、社区（如CSDN、掘金等）',
+						'喜欢各项体育运动（如乒乓球、台球、篮球等）'
 					]
 				}
 			},
 			render: function(){
 				return (
 					<div>
-						<ResumeInfo inftype="个人信息" name={this.state.name} sex={this.state.sex} age={this.state.age} edu={this.state.edu} workTime={this.state.workTime} hopePost={this.state.hopePost} hopeCity={this.state.hopeCity} />
+						<ResumeInfo inftype="个人信息" name={this.state.name} sex={this.state.sex} age={this.state.age} sch={this.state.sch} edu={this.state.edu} workTime={this.state.workTime} hopePost={this.state.hopePost} hopeCity={this.state.hopeCity} />
 						<ResumeContact inftype="联系方式" tel={this.state.tel} email={this.state.email} qq={this.state.qq} wechat={this.state.wechat} github={this.state.github} wechatgzh={this.state.wechatgzh} />
+						<ResumeSchool inftype="在校经历" school={this.state.school}/>
+						<ResumeHonor inftype="荣誉奖励" honors={this.state.honors}/>
 						<ResumeWorked inftype="工作经历" worked={this.state.worked}/>
 						<ResumeProject inftype="项目经验" projects={this.state.projects} />
+						<ResumeCert inftype="技能证书" certificate={this.state.certificate} />
 						<ResumeSkill inftype="专业技能" skills={this.state.skills} />
+						<ResumeHobby inftype="兴趣爱好" hobby={this.state.hobby} />
 					</div>
 				)
 			}
@@ -139,13 +211,14 @@
 					<div>
 						<h2 className="title">{this.props.inftype}</h2>
 						<ul>
-							<li><span className="num">1、</span>姓名：{this.props.name}</li>
-							<li><span className="num">2、</span>性别：{this.props.sex}</li>
-							<li><span className="num">3、</span>年龄：{this.props.age}</li>
-							<li><span className="num">4、</span>学历：{this.props.edu}</li>
-							<li><span className="num">5、</span>工作经验：{this.props.workTime}</li>
-							<li><span className="num">6、</span>期望职位：{this.props.hopePost}</li>
-							<li><span className="num">7、</span>期望城市：{this.props.hopeCity}</li>
+							<li><span className="num">1、</span><span className="tit">姓名：</span>{this.props.name}</li>
+							<li><span className="num">2、</span><span className="tit">性别：</span>{this.props.sex}</li>
+							<li><span className="num">3、</span><span className="tit">年龄：</span>{this.props.age}</li>
+							<li><span className="num">4、</span><span className="tit">毕业院校：</span>{this.props.sch}</li>
+							<li><span className="num">5、</span><span className="tit">学历：</span>{this.props.edu}</li>
+							<li><span className="num">6、</span><span className="tit">工作经验：</span>{this.props.workTime}</li>
+							<li><span className="num">7、</span><span className="tit">期望职位：</span>{this.props.hopePost}</li>
+							<li><span className="num">8、</span><span className="tit">期望城市：</span>{this.props.hopeCity}</li>
 						</ul>
 					</div>
 				)
@@ -157,12 +230,59 @@
 					<div>
 						<h2 className="title">{this.props.inftype}</h2>
 						<ul>
-							<li><span className="num">1、</span>电话：{this.props.tel}</li>
-							<li><span className="num">2、</span>QQ：{this.props.qq}</li>
-							<li><span className="num">3、</span>微信：{this.props.wechat}</li>
-							<li><span className="num">4、</span>邮箱：{this.props.email}</li>
-							<li><span className="num">5、</span>Github：{this.props.github}</li>
-							<li><span className="num">6、</span>微信公众号：{this.props.wechatgzh}</li>
+							<li><span className="num">1、</span><span className="tit">电话：</span>{this.props.tel}</li>
+							<li><span className="num">2、</span><span className="tit">QQ：</span>{this.props.qq}</li>
+							<li><span className="num">3、</span><span className="tit">微信：</span>{this.props.wechat}</li>
+							<li><span className="num">4、</span><span className="tit">邮箱：</span>{this.props.email}</li>
+							<li><span className="num">5、</span><span className="tit">Github：</span>{this.props.github}</li>
+							<li><span className="num">6、</span><span className="tit">微信公众号：</span>{this.props.wechatgzh}</li>
+						</ul>
+					</div>
+				)
+			}
+		});
+		var ResumeSchool = React.createClass({
+			render: function(){
+				var arr = []
+    			for(var i=0;i<this.props.school.length;i++){
+    				arr.push(<ArrSchool schoolIndex={i+1} clubTime={this.props.school[i].clubTime} club={this.props.school[i].club} post={this.props.school[i].post} duty={this.props.school[i].duty} />)
+    			}
+				return (
+					<div>
+						<h2 className="title">{this.props.inftype}</h2>
+						<ul>
+							{arr}
+						</ul>
+					</div>
+				)
+			}
+		});
+		var ArrSchool = React.createClass({
+			render: function(){
+				return (
+					<li className="li2 li3">
+						<span className="num">{this.props.schoolIndex}、</span><br />
+						<ul>
+							<li>社团时间：<p className="likP">{this.props.clubTime}</p></li>
+							<li>社团名称：<p className="likP">{this.props.club}</p></li>
+							<li>社团职位：<p className="likP">{this.props.post}</p></li>
+							<li>社团负责：<p className="likP">{this.props.duty}</p></li>
+						</ul>
+					</li>
+				)
+			}
+		});
+		var ResumeHonor = React.createClass({
+			render: function(){
+				var arr = []
+    			for(var i=0;i<this.props.honors.length;i++){
+    				arr.push(<li className="liDot">{this.props.honors[i]}</li>)
+    			}
+				return (
+					<div>
+						<h2 className="title">{this.props.inftype}</h2>
+						<ul>
+							{arr}
 						</ul>
 					</div>
 				)
@@ -230,6 +350,22 @@
 				)
 			}
 		});
+		var ResumeCert = React.createClass({
+			render: function(){
+				var arr = []
+    			for(var i=0;i<this.props.certificate.length;i++){
+    				arr.push(<li className="liDot">{this.props.certificate[i]}</li>)
+    			}
+				return (
+					<div>
+						<h2 className="title">{this.props.inftype}</h2>
+						<ul>
+							{arr}
+						</ul>
+					</div>
+				)
+			}
+		});
 		var ResumeSkill = React.createClass({
 			render: function(){
 				var arr = []
@@ -250,6 +386,22 @@
 			render: function(){
 				return (
 					<li><span className="num">{this.props.skillsIndex}、</span>{this.props.skill}</li>
+				)
+			}
+		});
+		var ResumeHobby = React.createClass({
+			render: function(){
+				var arr = []
+    			for(var i=0;i<this.props.hobby.length;i++){
+    				arr.push(<li className="liDot">{this.props.hobby[i]}</li>)
+    			}
+				return (
+					<div>
+						<h2 className="title">{this.props.inftype}</h2>
+						<ul>
+							{arr}
+						</ul>
+					</div>
 				)
 			}
 		});
