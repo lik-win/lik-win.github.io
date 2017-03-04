@@ -111,7 +111,7 @@
 					workTime: "三年",
 					hopePost: "WEB前端开发",
 					hopeCity: "北京",
-					hopeCost: "12k+",
+					hopeCost: "13k+",
 					tel:"15652831973 / 13383461973",
 					email: "961471331@qq.com",
 					qq: "961471331",
@@ -127,7 +127,7 @@
 						},
 						{
 							clubTime:'2012.10-2013.10',
-							club:'山西农业大学园艺学院体育部',
+							club:'山西农业大学体育部',
 							post:'体育部副部长',
 							duty:'负责组织园艺学院的田径赛、篮球赛、排球赛、乒乓球赛等多项体育赛事。'
 						}
@@ -141,21 +141,21 @@
 							workedTime:'2014.03-2015.09',
 							company:'山西环球巨人科技有限公司',
 							post:'WEB 前端工程师',
-							duty:'主要负责静态页面的建设、动画的设计与实现、Ajax实现前后台数据交互。'
+							duty:'将UI设计及交互体验设计要求融入到web应用中，完成公司web端和app端页面的开发和优化工作；应用JavaScript和相关技术与后台进行交互通信，并与后台开发工程师配合对页面样式和交互效果进行分析和调试；从前端的角度对前端设计提供建议与评估, 推动用户体验的优化。'
 						},
 						{
 							workedTime:'2015.09-2017.02',
 							company:'山西环球巨人科技有限公司',
 							post:'项目组组长',
-							duty:'主要负责网站需求分析、流程设计、一些功能及技术的预研、项目规划、分配工作、项目组内成员的工作协商与指导、项目拼接、汇报项目进度等'
+							duty:'主要负责网站需求分析、流程设计、一些功能及技术的预研、项目规划、分配工作、项目组内成员的工作协商与指导、项目拼接、汇报项目进度等。'
 						},
 					],
 					projects:[
 						{
-							proName:'东易日盛装饰集团官网（PC端）',
+							proName:'东易日盛装饰集团（PC端）',
 							proTime:'2014.05-2014.12',
 							proDes:'此项目为大型装饰公司的网站建设维护，通过观赏性的页面和动画设计吸引更多客户，更完美的展现公司的特色。',
-							proDuty:'我在此项目中负责了‘配套产品’目录和‘家装案例’目录下的‘设计理念’页面的建设、动画效果的实现，并参与到其他页面动画的设计中。也参与到了项目的组件、拼接、一些技术的指导和功能逻辑的实现。整个项目用了 Ajax 进行前后台数据的交互，实现了登陆、注册、咨询客服、联系设计师、列表、详情、修改用户名和密码等功能。'
+							proDuty:'我在此项目中负责了‘配套产品’目录和‘家装案例’目录下的‘设计理念’页面的建设、动画效果的实现。也参与了项目的组件、拼接、一些技术的指导和功能逻辑的实现。整个项目采用 Ajax 进行前后台数据的交互，实现了登陆、注册、咨询客服、联系设计师、列表、详情、修改用户名和密码等功能。'
 						},
 						{
 							proName:'surveyTime 调查问卷系统 （手机端）',
@@ -170,10 +170,10 @@
 							proDuty:'在此项目中我主要担任项目组长一职，负责分配成员的工作、前后台业务逻辑的指导、用户注册登陆管理，对项目整体有详细的了解。'
 						}
 					],
-					certificate:[
-						'计算机语言：HTML、CSS、JS',
-						'网页编辑器：HBuilder、Sublime',
-						'大学英语四级证书，读写能力良好'
+					evaluate:[
+						'获得大学英语四级证书，读写能力良好',
+						'能够独立完成个人承担模块或项目的开发和测试工作',
+						'具有良好的沟通表达能力、组织领导能力和较强的自学能力'
 					],
 					skills:[
 						'熟练运用HTML/XHTML、CSS等网页制作技术，熟悉页面架构和布局，熟练运用JavaScript及JQuery框架实现页面动态效果；',
@@ -206,7 +206,7 @@
 						<ResumeWorked inftype="工作经历" worked={this.state.worked}/>
 						<ResumeProject inftype="项目经验" projects={this.state.projects} />
 						<ResumeSkill inftype="专业技能" skills={this.state.skills} />
-						<ResumeCert inftype="技能证书" certificate={this.state.certificate} />
+						<ResumeCert inftype="自我评价" evaluate={this.state.evaluate} />
 						<ResumeHobby inftype="兴趣爱好" hobby={this.state.hobby} />
 					</div>
 				)
@@ -361,8 +361,8 @@
 		var ResumeCert = React.createClass({
 			render: function(){
 				var arr = []
-    			for(var i=0;i<this.props.certificate.length;i++){
-    				arr.push(<li className="liDot">{this.props.certificate[i]}</li>)
+    			for(var i=0;i<this.props.evaluate.length;i++){
+    				arr.push(<li className="liDot">{this.props.evaluate[i]}</li>)
     			}
 				return (
 					<div>
