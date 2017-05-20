@@ -759,6 +759,14 @@ a, ins {
     overflow: hidden
 }
 
+.lik-fullcalendar .lik-render-con {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0
+}
+
 .lik-fullcalendar .week-box .lik-date-item {
     height: 21px
 }
