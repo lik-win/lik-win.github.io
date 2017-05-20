@@ -34,8 +34,9 @@ $(function () {
         //console.log("本月第一天是 " + weekday[date.getDay()] + '    本月最后一天是 ' + lastDate.getDate());
         console.log($('#lik-fullcalendar .day-box .lik-date-item').length);
         //clear class and day content
-        for(var i=0;i<$('#lik-fullcalendar .day-box .lik-date-item').length;i++){
-            $('#lik-fullcalendar .day-box .lik-date-item').eq(i).removeClass('lik-prev-month-day').removeClass('lik-cur-month-day').removeClass('lik-next-month-day').find('span.day').html('');
+        var likDateLen = $('#lik-fullcalendar .day-box .lik-date-item').length
+        for(var i=0;i<likDateLen;i++){
+            $('#lik-fullcalendar .day-box .lik-date-item').eq(i).css('zIndex', likDateLen-i).removeClass('lik-prev-month-day').removeClass('lik-cur-month-day').removeClass('lik-next-month-day').find('span.day').html('');
             $('span.day').eq(i).html('');
         }
         //add class 'lik-prev-month-day' for previous month
