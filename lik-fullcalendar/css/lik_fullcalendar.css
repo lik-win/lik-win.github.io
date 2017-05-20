@@ -1,0 +1,814 @@
+@charset "utf-8";
+html {
+    background: #fff;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    height: 100%
+}
+
+body {
+    min-height: 100%
+}
+
+article, aside, blockquote, body, button, code, dd, details, div, dl, dt, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, hr, input, legend, li, menu, nav, ol, p, pre, section, td, textarea, th, ul {
+    margin: 0;
+    padding: 0
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block
+}
+
+audio, canvas, video {
+    display: inline-block
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+fieldset, img {
+    border: 0
+}
+
+iframe {
+    display: block
+}
+
+abbr, acronym {
+    border: 0;
+    font-variant: normal
+}
+
+del {
+    text-decoration: line-through
+}
+
+address, caption, cite, code, dfn, em, th, var {
+    font-style: normal;
+    font-weight: 500
+}
+
+ol, ul {
+    list-style: none
+}
+
+caption, th {
+    text-align: left
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: 500
+}
+
+q:after, q:before {
+    content: ''
+}
+
+sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline
+}
+
+sup {
+    top: -.5em
+}
+
+sub {
+    bottom: -.25em
+}
+
+a:hover {
+    text-decoration: underline
+}
+
+a, ins {
+    text-decoration: none
+}
+
+.lik-fullcalendar .action-view, .lik-fullcalendar .count-view, .lik-fullcalendar .lik-date-view, .lik-fullcalendar .list-view {
+    width: 100%;
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 1000
+}
+
+.lik-fullcalendar .list-view {
+    display: block !important
+}
+
+.lik-fullcalendar .count-view {
+    border-top: 1px solid #eee
+}
+
+.lik-fullcalendar .lik-date-view {
+    z-index: 1002
+}
+
+.lik-fullcalendar .date-view-box {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    bottom: 35px
+}
+
+.lik-fullcalendar .action-view {
+    z-index: 1003
+}
+
+.lik-fullcalendar .action-view .j-import-in {
+    display: none
+}
+
+.lik-fullcalendar .action-view .action-select-box {
+    width: 140px
+}
+
+.lik-fullcalendar .action-view .action-select-box .g-select-title-wrapper {
+    height: 26px;
+    line-height: 26px
+}
+
+.lik-fullcalendar .action-view .action-select-box .g-select-title-wrapper i {
+    top: 9px
+}
+
+.lik-fullcalendar .btn-switch-view {
+    display: inline-block;
+    line-height: 24px;
+    padding: 0 15px;
+    margin-left: 0;
+    font-size: 13px;
+    color: #3487e2;
+    cursor: pointer;
+    vertical-align: middle
+}
+
+.lik-fullcalendar .btn-switch-view:hover {
+    text-decoration: underline
+}
+
+.lik-fullcalendar .count-view {
+    background-color: #fff
+}
+
+.lik-fullcalendar .count-view .map-list-item {
+    padding: 15px 20px
+}
+
+.lik-fullcalendar .count-view .filter-wrap {
+    padding: 10px 0;
+    background-color: #f4f6f9;
+    border-bottom: 1px solid #eee;
+    overflow: hidden
+}
+
+.lik-fullcalendar .count-view .filter-wrap .g-select-title-wrapper {
+    height: 28px;
+    line-height: 28px
+}
+
+.lik-fullcalendar .count-view .filter-wrap .g-select-title-wrapper i {
+    top: 9px
+}
+
+.lik-fullcalendar .count-view .date-wrap, .lik-fullcalendar .count-view .sort-wrap {
+    float: left;
+    width: 150px;
+    margin-left: 20px
+}
+
+.lik-fullcalendar .count-view .tip-wrap {
+    height: 38px;
+    line-height: 38px;
+    color: #999;
+    border-bottom: 1px solid #eee
+}
+
+.lik-fullcalendar .count-view .tip-wrap span {
+    margin-left: 22px
+}
+
+.lik-fullcalendar .count-view .list-wrap {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 90px;
+    bottom: 0
+}
+
+.lik-fullcalendar .lik-date-view .crm-g-loading {
+    width: 180px;
+    height: 80px;
+    background-color: #fff;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border: 1px solid #eee;
+    margin-left: -90px;
+    position: absolute;
+    left: 50%;
+    top: 150px
+}
+
+.lik-fullcalendar .visit-item {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0
+}
+
+.lik-fullcalendar .visit-item ul {
+    width: 100%;
+    position: absolute;
+    bottom: 4px;
+    left: 0
+}
+
+.lik-fullcalendar .visit-item li {
+    line-height: 22px;
+    position: relative;
+    padding: 0 45px 0 10px
+}
+
+.lik-fullcalendar .visit-item .name {
+    display: block;
+    width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    min-height: 22px;
+    color: #666
+}
+
+.lik-fullcalendar .visit-item .status {
+    width: 20px;
+    height: 22px;
+    overflow: hidden;
+    position: absolute;
+    right: 4px;
+    top: 0;
+    font-size: 12px;
+    /*background: url(../images/ico-visit-2438abb697.png) no-repeat;*/
+    text-indent: -999em
+}
+
+.lik-fullcalendar .visit-item .status-0 {
+    background-position: 0 2px
+}
+
+.lik-fullcalendar .visit-item .status-1 {
+    background-position: -20px 3px
+}
+
+.lik-fullcalendar .visit-item .status-2 {
+    background-position: -40px 3px
+}
+
+.lik-fullcalendar .visit-item .no-visit {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    margin-top: -9px;
+    font-size: 12px;
+    text-align: center;
+    color: #ddd
+}
+
+.lik-fullcalendar .visit-item .item-operate {
+    display: none;
+    width: 100%;
+    border-top: 1px dashed #eee;
+    line-height: 30px;
+    position: absolute;
+    bottom: -31px;
+    text-align: center
+}
+
+.lik-fullcalendar .visit-item .item-operate .span-item, .lik-fullcalendar .visit-item .item-operate span {
+    display: inline-block;
+    width: 30%;
+    text-align: center;
+    color: #3487e2;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.lik-fullcalendar .visit-item .item-operate .span-item:hover, .lik-fullcalendar .visit-item .item-operate span:hover {
+    text-decoration: underline
+}
+
+.lik-fullcalendar .visit-item .item-operate .span-item:hover .more-item, .lik-fullcalendar .visit-item .item-operate span:hover .more-item {
+    display: block
+}
+
+.lik-fullcalendar .visit-item .item-operate .span-item.disabled, .lik-fullcalendar .visit-item .item-operate span.disabled {
+    cursor: default;
+    color: #ccc;
+    text-decoration: none
+}
+
+.lik-fullcalendar .visit-item .item-operate .more-item {
+    display: none;
+    width: 130px;
+    padding: 5px 0;
+    -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, .2);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .2);
+    background-color: #fff;
+    position: absolute;
+    right: 0;
+    top: 30px
+}
+
+.lik-fullcalendar .visit-item .item-operate .more-item span {
+    width: 100px;
+    display: block;
+    padding: 0 15px;
+    height: 36px;
+    line-height: 36px;
+    text-align: left;
+    color: #666;
+    text-decoration: none
+}
+
+.lik-fullcalendar .visit-item .item-operate .more-item span:hover {
+    background-color: #f2f2f2
+}
+
+.lik-fullcalendar .visit-item .name {
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.lik-fullcalendar .visit-item .name:hover {
+    text-decoration: underline
+}
+
+.lik-fullcalendar .visit-item-h:hover {
+    -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, .2);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .2);
+    bottom: -31px;
+    background-color: #fff;
+    z-index: 100
+}
+
+.lik-fullcalendar .visit-item-h:hover .no-visit {
+    margin-top: -24px
+}
+
+.lik-fullcalendar .visit-item-h:hover ul {
+    bottom: 35px
+}
+
+.lik-fullcalendar .visit-item-h:hover .item-operate {
+    display: block;
+    bottom: 0
+}
+
+.lik-fullcalendar .visit-item-h:hover .name {
+    color: #3487e2
+}
+
+.lik-fullcalendar .emp-select-box {
+    padding: 0 8px;
+    border: 1px solid #eee;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    cursor: pointer;
+    height: 26px;
+    line-height: 26px;
+    position: relative;
+    color: #fff
+}
+
+.lik-fullcalendar .emp-select-box.disabled {
+    color: #ccc;
+    background-color: #f0f0f0;
+    cursor: default
+}
+
+.lik-fullcalendar .emp-select-box.disabled:after, .lik-fullcalendar .emp-select-box.disabled:before {
+    display: none
+}
+
+.lik-fullcalendar .emp-select-box .c-name {
+    position: relative;
+    display: inline-block;
+    background: #3d83e9;
+    height: 22px;
+    margin-top: 2px;
+    -webkit-border-radius: 60px;
+    border-radius: 60px;
+    line-height: 22px;
+    padding: 0 25px 0 10px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: #fff;
+    max-width: 116px
+}
+
+.lik-fullcalendar .emp-select-box .c-name span {
+    position: absolute;
+    right: 10px
+}
+
+.lik-fullcalendar .count-view .map-l, .lik-fullcalendar .map-view .map-l {
+    width: 359px;
+    height: 100%;
+    border-right: 1px solid #eee;
+    position: relative
+}
+
+.lik-fullcalendar .count-view .scroll-el, .lik-fullcalendar .map-view .scroll-el {
+    width: 100%;
+    height: 100%
+}
+
+.lik-fullcalendar .count-view .map-r, .lik-fullcalendar .map-view .map-r {
+    position: absolute;
+    left: 360px;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    background: url(../images/sec-ld-1e2eb05443.gif) 50% no-repeat
+}
+
+.lik-fullcalendar .count-view .map-r .crm-c-map-overlay, .lik-fullcalendar .map-view .map-r .crm-c-map-overlay {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #fff
+}
+
+.lik-fullcalendar .count-view .map-r .map-close, .lik-fullcalendar .map-view .map-r .map-close {
+    display: none
+}
+
+.lik-fullcalendar .count-view .map-r .map-wraper, .lik-fullcalendar .map-view .map-r .map-wraper {
+    position: static;
+    width: 100%;
+    height: 100%
+}
+
+.lik-fullcalendar .map-list-item {
+    padding: 15px 20px 15px 55px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    color: #999;
+    line-height: 20px;
+    position: relative
+}
+
+.lik-fullcalendar .map-list-item.cur, .lik-fullcalendar .map-list-item:hover {
+    background-color: #fafafa
+}
+
+.lik-fullcalendar .map-list-item h5 {
+    padding-bottom: 5px;
+    padding-right: 70px
+}
+
+.lik-fullcalendar .map-list-item .pos, .lik-fullcalendar .map-list-item .tip-pointer {
+    width: 24px;
+    height: 29px;
+    line-height: 27px;
+    text-align: center;
+    color: #fff;
+    font-size: 12px;
+    position: absolute;
+    left: 10px;
+    top: 12px;
+    background: url(../images/icon-map-dfb00c20f1.png?5.5) no-repeat;
+    font-family: helvetica
+}
+
+.lik-fullcalendar .map-list-item .tip-status-1 {
+    background-position: -48px 0
+}
+
+.lik-fullcalendar .map-list-item .tip-status-0 {
+    background-position: -24px 0
+}
+
+.lik-fullcalendar .map-list-item .drag-btn {
+    position: absolute;
+    right: 15px;
+    top: 40px
+}
+
+.lik-fullcalendar .map-list-item.dragging {
+    background-color: #eee;
+    opacity: .6
+}
+
+.lik-fullcalendar .no-map-data {
+    font-size: 20px;
+    text-align: center;
+    color: #999;
+    padding-top: 150px
+}
+
+.lik-fullcalendar .change-geo {
+    position: absolute;
+    right: 22px;
+    top: 15px
+}
+
+.lik-fullcalendar .show-pos {
+    padding: 6px 5px 0 0
+}
+
+.lik-fullcalendar .define-date-wrap {
+    border: 1px solid #ddd;
+    margin-top: 10px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    overflow: hidden
+}
+
+.lik-fullcalendar .define-date-wrap .line {
+    float: left;
+    width: 15px;
+    height: 1px;
+    margin: 15px 10px;
+    background-color: #ddd;
+    overflow: hidden
+}
+
+.lik-fullcalendar .define-date-wrap .end-time, .lik-fullcalendar .define-date-wrap .start-time {
+    width: 150px;
+    float: left
+}
+
+.lik-fullcalendar .define-date-wrap .end-time .f-g-datepicker-input-wrapper input, .lik-fullcalendar .define-date-wrap .start-time .f-g-datepicker-input-wrapper input {
+    width: 140px
+}
+
+.lik-fullcalendar .define-date-wrap .end-time .f-g-date-time-value-wrapper, .lik-fullcalendar .define-date-wrap .start-time .f-g-date-time-value-wrapper {
+    display: block;
+    width: 100%
+}
+
+.lik-fullcalendar .define-date-wrap .end-time .f-g-date-time-value-wrapper .date-wrapper, .lik-fullcalendar .define-date-wrap .start-time .f-g-date-time-value-wrapper .date-wrapper {
+    width: 150px;
+    padding: 0;
+    z-index: 22
+}
+
+.lik-fullcalendar .define-date-wrap .end-time .f-g-date-time-value-wrapper .date-wrapper input, .lik-fullcalendar .define-date-wrap .start-time .f-g-date-time-value-wrapper .date-wrapper input {
+    background-color: transparent
+}
+
+.lik-fullcalendar .define-date-wrap .end-time .f-g-date-time-value-wrapper .time-wrapper, .lik-fullcalendar .define-date-wrap .start-time .f-g-date-time-value-wrapper .time-wrapper {
+    width: 60px;
+    z-index: 20
+}
+
+.lik-fullcalendar .define-date-wrap .end-time .f-g-date-time-value-wrapper .time-wrapper input, .lik-fullcalendar .define-date-wrap .start-time .f-g-date-time-value-wrapper .time-wrapper input {
+    width: 60px;
+    padding: 0;
+    border: none
+}
+
+.lik-fullcalendar .define-date-wrap .end-time .f-g-datepicker-input, .lik-fullcalendar .define-date-wrap .start-time .f-g-datepicker-input {
+    border: none
+}
+
+.lik-fullcalendar .day-view {
+    position: relative
+}
+
+.lik-fullcalendar .day-view .date-title {
+    font-size: 20px;
+    border: none;
+    margin-top: -10px;
+    margin-bottom: 15px;
+    color: #666;
+    position: relative
+}
+
+.lik-fullcalendar .day-view .today-btn {
+    position: absolute;
+    left: 0;
+    font-size: 13px;
+    color: #3487e2;
+    cursor: pointer
+}
+
+.lik-fullcalendar .day-view .today-btn:hover {
+    text-decoration: underline
+}
+
+.lik-fullcalendar .day-view .btns-box {
+    position: absolute;
+    right: 0;
+    top: -2px
+}
+
+.lik-fullcalendar .day-view .btns-box span {
+    padding: 0 8px;
+    font-size: 13px;
+    margin-left: 15px
+}
+
+.lik-fullcalendar .day-view .batch-term {
+    padding: 0 20px 10px
+}
+
+.lik-fullcalendar .day-view .dt-tatal-tip {
+    min-height: 48px
+}
+
+.lik-fullcalendar .day-view .dt-tatal-tip .tatal-tip {
+    bottom: 15px
+}
+
+.lik-fullcalendar .day-view .drag-btn {
+    display: none;
+    margin-left: 10px;
+    width: 20px;
+    height: 20px;
+    overflow: hidden;
+    cursor: move;
+    /*background: url(../images/ico-visit-2438abb697.png) -60px 0 no-repeat*/
+}
+
+.lik-fullcalendar .day-view tr {
+    position: relative
+}
+
+.lik-fullcalendar .day-view tr.dragging {
+    background-color: #eee;
+    opacity: .6;
+    height: 48px;
+    line-height: 48px
+}
+
+.lik-fullcalendar .day-view tr.dragging td {
+    padding: 0 10px
+}
+
+.lik-fullcalendar .day-list-view {
+    border: 1px solid #eee;
+    height: 430px;
+    position: relative;
+    z-index: 1
+}
+
+.lik-fullcalendar .map-view {
+    background: #fff;
+    position: absolute;
+    left: 1px;
+    top: 113px;
+    bottom: 1px;
+    right: 1px;
+    z-index: 2
+}
+
+.lik-fullcalendar .date-scroll {
+    width: 100%;
+    height: 100%
+}
+
+.lik-fullcalendar .pannel-box {
+    position: absolute;
+    left: 0;
+    top: 71px;
+    bottom: 0;
+    right: 0
+}
+
+.lik-fullcalendar .date-title {
+    width: 100%;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    line-height: 48px;
+    font-size: 16px;
+    text-align: center;
+    position: relative
+}
+
+.lik-fullcalendar .date-title span {
+    display: inline-block
+}
+
+.lik-fullcalendar .date-title .today-month {
+    position: absolute;
+    left: 24px;
+    top: 0;
+    cursor: pointer;
+    color: #3487e2;
+    font-size: 13px
+}
+
+.lik-fullcalendar .date-title .today-month:hover {
+    text-decoration: underline
+}
+
+.lik-fullcalendar .next-month, .lik-fullcalendar .prev-month {
+    display: inline-block;
+    margin: 0 5px;
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative
+}
+
+.lik-fullcalendar .next-month:after, .lik-fullcalendar .next-month:before, .lik-fullcalendar .prev-month:after, .lik-fullcalendar .prev-month:before {
+    content: ' ';
+    display: block;
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: 0;
+    top: 5px;
+    overflow: hidden;
+    border: 6px solid transparent;
+    border-right-color: #3487e2
+}
+
+.lik-fullcalendar .prev-month:after {
+    border-right-color: #fff;
+    left: 2px
+}
+
+.lik-fullcalendar .next-month:after, .lik-fullcalendar .next-month:before {
+    left: 8px;
+    border-left-color: #3487e2;
+    border-right-color: transparent
+}
+
+.lik-fullcalendar .next-month:after {
+    border-left-color: #fff;
+    left: 6px
+}
+
+.lik-fullcalendar .week-box {
+    width: 100%;
+    overflow: hidden
+}
+
+.lik-fullcalendar .week-box .lik-date-item {
+    height: 21px
+}
+
+.lik-fullcalendar .week-box .lik-date-item-inner {
+    line-height: 20px;
+    color: #999;
+    font-size: 12px;
+    text-align: center;
+    min-height: 20px
+}
+
+.lik-fullcalendar .lik-date-item {
+    float: left;
+    width: 14.285%;
+    position: relative
+}
+
+.lik-fullcalendar .lik-date-item-inner {
+    border-left: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    bottom: 1px;
+    left: 1px
+}
+
+.lik-fullcalendar .lik-date-item-inner .day {
+    font-size: 12px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 200;
+    color: #666;
+    font-family: Arial
+}
+
+.lik-fullcalendar .lik-next-month-day .day, .lik-fullcalendar .lik-prev-month-day .day {
+    color: #ccc
+}
+
+.lik-fullcalendar .lik-cur-month-today .day {
+    color: #fff;
+    width: 30px;
+    height: 18px;
+    line-height: 18px;
+    text-align: center;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background-color: #3487e2
+}
