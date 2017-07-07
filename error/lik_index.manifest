@@ -1,9 +1,9 @@
 CACHE MANIFEST
 #v1.0.1
 CACHE:
-error/bg.jpg
-error/contentbg.jpg
-error/style.css
+bg.jpg
+contentbg.jpg
+style.css
 error/error.html
 
 NETWORK:
