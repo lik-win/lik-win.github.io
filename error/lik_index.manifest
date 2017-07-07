@@ -9,4 +9,4 @@ NETWORK:
 *
 
 FALLBACK:
-error.html
+error/error.html
