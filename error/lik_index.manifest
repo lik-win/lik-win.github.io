@@ -10,4 +10,4 @@ NETWORK:
 *
 
 FALLBACK:
-error.html
+/index/ error.html
