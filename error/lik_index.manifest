@@ -4,7 +4,7 @@ CACHE:
 bg.jpg
 contentbg.jpg
 style.css
-error/error.html
+error.html
 
 NETWORK:
 *
