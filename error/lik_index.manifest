@@ -1,13 +1,13 @@
 CACHE MANIFEST
 #v1.0.1
 CACHE:
-bg.jpg
-contentbg.jpg
-style.css
-error.html
+error/bg.jpg
+error/contentbg.jpg
+error/style.css
+error/error.html
 
 NETWORK:
 *
 
 FALLBACK:
-/index/ error.html
+/index/ error/error.html
