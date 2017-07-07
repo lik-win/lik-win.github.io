@@ -1,0 +1,10 @@
+CACHE MANIFEST
+bg.jpg
+contentbg.jpg
+style.css
+
+NETWORK:
+*
+
+FALLBACK:
+error.html
