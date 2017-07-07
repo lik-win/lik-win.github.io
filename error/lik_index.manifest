@@ -4,9 +4,10 @@ CACHE:
 bg.jpg
 contentbg.jpg
 style.css
+error.html
 
 NETWORK:
 *
 
 FALLBACK:
-/ error/error.html
+error.html
