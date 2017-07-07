@@ -1,10 +1,10 @@
 CACHE MANIFEST
-error/bg.jpg
-error/contentbg.jpg
-error/style.css
+bg.jpg
+contentbg.jpg
+style.css
 
 NETWORK:
 *
 
 FALLBACK:
-error/error.html
+/ error.html
