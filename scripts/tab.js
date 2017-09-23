@@ -1,2 +1,119 @@
-/*! lik 2017-02-22 */
-$(function(){function a(){for(var a=0;a<f.length;a++)f[a].style.transition="all 0.6s ease";f[0].style.transform="perspective(1000px) translateX(-350px) translateZ(-100px) rotateY(70deg)",f[0].style.opacity="1",f[1].style.transform="perspective(1000px)",f[2].style.transform="perspective(1000px) translateX(350px) translateZ(-100px) rotateY(-70deg)",f[3].style.transform="perspective(1000px) translateX(550px) translateZ(-200px) rotateY(-70deg)",f[3].style.opacity="0",d.insertBefore(f[4],f[0]),f[0].style.transform="perspective(1000px) translateX(-550px) translateZ(-200px) rotateY(70deg)",f[0].style.opacity="0",g.unshift(g[g.length-1]),g.splice(g.length-1,1),h.unshift(h[h.length-1]),h.splice(h.length-1,1),f[0].style.background="url(images/"+g[g.length-2]+".png) no-repeat",f[0].style.backgroundSize="100% 100%",e.innerHTML=h[0]}function b(){for(var a=0;a<f.length;a++)f[a].style.transition="all 0.6s ease";f[1].style.transform="perspective(1000px) translateX(-550px) translateZ(-200px) rotateY(70deg)",f[1].style.opacity="0",f[2].style.transform="perspective(1000px) translateX(-350px) translateZ(-100px) rotateY(70deg)",f[3].style.transform="perspective(1000px)",f[4].style.transform="perspective(1000px) translateX(350px) translateZ(-100px) rotateY(-70deg)",f[4].style.opacity="1",d.appendChild(f[0]),f[4].style.transform="perspective(1000px) translateX(550px) translateZ(-200px) rotateY(-70deg)",f[4].style.opacity="0",g.push(g[0]),g.splice(0,1),h.push(h[0]),h.splice(0,1),f[4].style.background="url(images/"+g[2]+".png) no-repeat",f[4].style.backgroundSize="100% 100%",e.innerHTML=h[0]}var c=document.getElementById("prev"),d=(document.getElementById("next"),document.getElementById("change")),e=document.getElementById("word"),f=d.getElementsByTagName("div"),g=["hsskt","pc1","bjs","home","iridium","phone2","survey"],h=["PC端项目展示1","PC端项目展示2","PC端项目展示3","响应式项目展示1","响应式项目展示2","手机端项目展示1","手机端项目展示2"];e.innerHTML=h[0],f[0].style.transform="perspective(1000px) translateX(-550px) translateZ(-200px) rotateY(70deg)",f[0].style.opacity="0",f[1].style.transform="perspective(1000px) translateX(-350px) translateZ(-100px) rotateY(70deg)",f[2].style.transform="perspective(1000px)",f[3].style.transform="perspective(1000px) translateX(350px) translateZ(-100px) rotateY(-70deg)",f[4].style.transform="perspective(1000px) translateX(550px) translateZ(-200px) rotateY(-70deg)",f[4].style.opacity="0",f[0].style.background="url(images/"+g[g.length-2]+".png) no-repeat",f[1].style.background="url(images/"+g[g.length-1]+".png) no-repeat",f[2].style.background="url(images/"+g[0]+".png) no-repeat",f[3].style.background="url(images/"+g[1]+".png) no-repeat",f[4].style.background="url(images/"+g[2]+".png) no-repeat";for(var i=0;i<f.length;i++)f[i].style.backgroundSize="100% 100%";c.onclick=function(){};var j=null;j=setInterval(b,2e3),$("#prev").mousedown(function(){clearInterval(j)}),$("#prev").mouseup(function(){a(),j=setInterval(b,2e3)}),$("#next").mousedown(function(){clearInterval(j)}),$("#next").mouseup(function(){b(),j=setInterval(b,2e3)}),$("#change").hover(function(){clearInterval(j)},function(){j=setInterval(b,2e3)})});
+$(function() {
+	var oPrev = document.getElementById('prev')
+	var oNext = document.getElementById('next')
+	var oChange = document.getElementById('change')
+	var oWord = document.getElementById('word')
+	var aDiv = oChange.getElementsByTagName('div')
+	
+
+	var aImg = ['sowork_login', 'hsskt', 'pc1', 'bjs', 'home', 'iridium', 'phone2', 'survey']
+	var aImgName = ['PC端项目展示1', 'PC端项目展示2', 'PC端项目展示3', 'PC端项目展示4', '响应式项目展示1', '响应式项目展示2', '手机端项目展示1', '手机端项目展示2']
+	
+	oWord.innerHTML = aImgName[0]
+
+	aDiv[0].style.transform = 'perspective(1000px) translateX(-550px) translateZ(-200px) rotateY(70deg)'
+	aDiv[0].style.opacity = '0'
+	aDiv[1].style.transform = 'perspective(1000px) translateX(-350px) translateZ(-100px) rotateY(70deg)'
+	aDiv[2].style.transform = 'perspective(1000px)'
+	aDiv[3].style.transform = 'perspective(1000px) translateX(350px) translateZ(-100px) rotateY(-70deg)'
+	aDiv[4].style.transform = 'perspective(1000px) translateX(550px) translateZ(-200px) rotateY(-70deg)'
+	aDiv[4].style.opacity = '0'
+/*
+	for(var j = 0; j < aImg.length; j++) {
+		for(var i = 0; i < aDiv.length; i++) {
+			aDiv[i].style.background = 'url(images/' + aImg[j] + '.png) no-repeat'
+			aDiv[i].style.backgroundSize = '100% 100%'
+		}
+	}
+*/
+	
+	aDiv[0].style.background = 'url(images/' + aImg[aImg.length-2] + '.png) no-repeat'
+	aDiv[1].style.background = 'url(images/' + aImg[aImg.length-1] + '.png) no-repeat'
+	aDiv[2].style.background = 'url(images/' + aImg[0] + '.png) no-repeat'
+	aDiv[3].style.background = 'url(images/' + aImg[1] + '.png) no-repeat'
+	aDiv[4].style.background = 'url(images/' + aImg[2] + '.png) no-repeat'
+	
+	for(var i=0;i<aDiv.length;i++){
+		aDiv[i].style.backgroundSize = '100% 100%'
+	}
+	
+	
+
+	oPrev.onclick = function() {
+		
+	}
+
+
+	var likTimer = null
+	
+	likTimer = setInterval(likNext, 2000)
+
+	$('#prev').mousedown(function(){
+		clearInterval(likTimer)
+	})
+
+	$('#prev').mouseup(function(){
+		likPrev()
+		likTimer = setInterval(likNext, 2000)
+	})
+
+	$('#next').mousedown(function(){
+		clearInterval(likTimer)
+	})
+
+	$('#next').mouseup(function(){
+		likNext()
+		likTimer = setInterval(likNext, 2000)
+	})
+	
+	$('#change').hover(function(){
+		clearInterval(likTimer)
+	},function(){
+		likTimer = setInterval(likNext, 2000)
+	})
+	
+	function likPrev(){
+		for(var i = 0; i < aDiv.length; i++) {
+			aDiv[i].style.transition = 'all 0.6s ease'
+		}
+		aDiv[0].style.transform = 'perspective(1000px) translateX(-350px) translateZ(-100px) rotateY(70deg)'
+		aDiv[0].style.opacity = '1'
+		aDiv[1].style.transform = 'perspective(1000px)'
+		aDiv[2].style.transform = 'perspective(1000px) translateX(350px) translateZ(-100px) rotateY(-70deg)'
+		aDiv[3].style.transform = 'perspective(1000px) translateX(550px) translateZ(-200px) rotateY(-70deg)'
+		aDiv[3].style.opacity = '0'
+		oChange.insertBefore(aDiv[4], aDiv[0])
+		aDiv[0].style.transform = 'perspective(1000px) translateX(-550px) translateZ(-200px) rotateY(70deg)'
+		aDiv[0].style.opacity = '0'
+		aImg.unshift(aImg[aImg.length-1])
+		aImg.splice(aImg.length-1,1)
+		aImgName.unshift(aImgName[aImgName.length-1])
+		aImgName.splice(aImgName.length-1,1)
+		aDiv[0].style.background = 'url(images/' + aImg[aImg.length-2] + '.png) no-repeat'
+		aDiv[0].style.backgroundSize = '100% 100%'
+		oWord.innerHTML = aImgName[0]
+	}
+	
+	function likNext(){
+		for(var i = 0; i < aDiv.length; i++) {
+			aDiv[i].style.transition = 'all 0.6s ease'
+		}
+		aDiv[1].style.transform = 'perspective(1000px) translateX(-550px) translateZ(-200px) rotateY(70deg)'
+		aDiv[1].style.opacity = '0'
+		aDiv[2].style.transform = 'perspective(1000px) translateX(-350px) translateZ(-100px) rotateY(70deg)'
+		aDiv[3].style.transform = 'perspective(1000px)'
+		aDiv[4].style.transform = 'perspective(1000px) translateX(350px) translateZ(-100px) rotateY(-70deg)'
+		aDiv[4].style.opacity = '1'
+		oChange.appendChild(aDiv[0])
+		aDiv[4].style.transform = 'perspective(1000px) translateX(550px) translateZ(-200px) rotateY(-70deg)'
+		aDiv[4].style.opacity = '0'
+		aImg.push(aImg[0])
+		aImg.splice(0,1)
+		aImgName.push(aImgName[0])
+		aImgName.splice(0,1)
+		aDiv[4].style.background = 'url(images/' + aImg[2] + '.png) no-repeat'
+		aDiv[4].style.backgroundSize = '100% 100%'
+		oWord.innerHTML = aImgName[0]
+	}
+	
+})
