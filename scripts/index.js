@@ -203,10 +203,12 @@ $(function(){
 	$('#toLover').click(function(){
 		var resVal = prompt('还记得我们的生日吗 ^_^!')
 		if(resVal == '20180124'){
-			$(this).attr('href', 'http://www.91lik.win/I_LOVE_U/')
+            $(this).attr('href', 'http://www.91lik.win/I_LOVE_U/');
+            window.localStorage.setItem('love_day', '20180124true');
 		}else{
             // alert('对不起，密码输入有误！');
 			$(this).attr('href', 'javascript:;')
+            window.localStorage.removeItem('love_day');
 		}
 	})
 
