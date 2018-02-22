@@ -199,6 +199,17 @@ $(function(){
 		}
 	})
 	
+	// 跳转love
+	$('#toLover').click(function(){
+		var resVal = prompt('还记得我们的生日吗 ^_^!')
+		if(resVal == '20180124'){
+			$(this).attr('href', 'http://www.91lik.win/I_LOVE_U/')
+		}else{
+            // alert('对不起，密码输入有误！');
+			$(this).attr('href', 'javascript:;')
+		}
+	})
+
 	// 简历下载
 	$('#resDown').click(function(){
 		var resVal = prompt('请输入密码(若不知道密码，请联系 Lik ^_^!)')
@@ -209,5 +220,5 @@ $(function(){
 			$(this).attr('href', 'javascript:;')
 		}
 	})
-	
+
 })
