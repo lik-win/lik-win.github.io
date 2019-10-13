@@ -13,7 +13,7 @@ function move(){
         var top = 220;
         //使用定时器移动DIV
         var timer  =  setInterval(function(){ //移动的函数
-          if(num==105){ //移动105次
+          if(num==80){ //移动80次
             clearInterval(timer); 
           }
           //通过left样式属性设置。必须带单位

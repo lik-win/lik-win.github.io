@@ -75,9 +75,10 @@ body {
 
 #time{
 	position:absolute;
-	left:750px;
-	top:400px;
+	left:860px;
+	top:460px;
 	overflow:hidden;
+	padding-right: 20px;
 }
 
 #show{
